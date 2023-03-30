@@ -1,0 +1,5 @@
+.strips img{
+    object-fit: cover;
+    /* background-position: bottom; */
+    height: 350px;
+}
