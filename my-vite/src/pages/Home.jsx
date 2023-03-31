@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import ListMovies from '../components/ListMovies'
 import Strips from '../components/Strips'
-import { RotatingLines } from 'react-loader-spinner'
+import Loading from '../components/Loading'
 
 const Home = () => {
 
@@ -16,30 +16,22 @@ const Home = () => {
   },[querys])
 
   const getData = async (searchQ) =>{
+    if (!searchQ)return;
     setIsLoading(true);
       let url = `https://www.omdbapi.com/?s=${searchQ}&apikey=f3141dc2`;
       const resp = await fetch(url);
       const data = await resp.json();
       setAPI(data.Search);
-    setIsLoading(false);
+      setIsLoading(false);
   }  
 
-  console.log(API);
-
+  // console.log(API);
   return (
-    <div>
+    <div className='home'>
         <Strips API={API}/>
-        {isLoading && <div className='my-4 text-center'>
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="66"
-            visible={true}
-          />  
-          <h5>Loading...</h5>
-        </div>}
-        <ListMovies API={API}/>
+        {isLoading && <Loading/>}
+        {!API && <h2 className='p-3 '> Not results! <p className='fs-6 py-3'>Try agen...</p></h2>}
+        {API && <ListMovies API={API}/>}
     </div>
   )
 }

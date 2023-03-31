@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
-import { RotatingLines } from 'react-loader-spinner'
-import {BsStarFill,BsStarHalf} from 'react-icons/bs'
+import {GiSandsOfTime} from 'react-icons/gi'
+import Raiting from '../components/Raiting';
+import Loading from '../components/Loading';
 
 const MovieDetailes = () => {
 
@@ -16,6 +17,7 @@ const MovieDetailes = () => {
   },[])
 
   const getData = async () =>{
+    setAPI(false)
     setIsLoading(true);
     let url = `https://www.omdbapi.com/?i=${params['id']}&apikey=f3141dc2`
     const resp = await fetch(url);
@@ -27,53 +29,33 @@ const MovieDetailes = () => {
   const goBack = ()=>{
     nav(-1);
   }
-
-  const stars = [];
-  const wholeStars = Math.floor(API.imdbRating);
-  const halfStar = API.imdbRating % 1;
-
-  for (let i = 0; i < wholeStars; i++) {
-    stars.push(<span key={i}><BsStarFill/></span>);
-  }
-  if (halfStar.toFixed(1) >= 0.5) {
-    stars.push(<span key={wholeStars}><BsStarHalf/></span>);
-  }
-
-
-  console.log(wholeStars);
-  console.log(halfStar);
   
   return (
-    <div className='d-md-flex container pt-5 text-center text-md-start'>
+    <div className='movie-detailes'>
+          {isLoading && <Loading/>}
 
-        {isLoading && <div className='my-4 text-center'>
-          <RotatingLines
-            strokeColor="grey"
-            strokeWidth="5"
-            animationDuration="0.75"
-            width="66"
-            visible={true}
-          />  
-          <h5>Loading...</h5>
-        </div>}
-
-      <div className="left-containet">
-        <img src={API.Poster} alt="" />
-      </div>
-      <div className="right-containet ps-md-4 ps-0 pt-4">
-        <h4>Movie name : {API.Title}</h4>
-        <h3>Year : {API.Year}</h3>
-        <p>Description : {API.Plot}</p>
-        <div>
-          <span className='pe-3'>
-            <b>Raiting :</b> <span className='border border-4 border-success rounded p-2'>{API.imdbRating}</span>
-          </span>
-          <span className='fs-4 me-3 text-warning'>
-              {stars}
-          </span>
+      {API && <div className='d-md-flex p-5 text-center text-md-start'>
+        <div className="left-containet">
+          <img src={API.Poster} alt="" />
         </div>
-        <button className='btn btn-warning mt-3' onClick={goBack}>Go back</button>
-      </div>
+        <div className="right-containet ps-md-4 ps-0 pt-4">
+          <h4><b>Movie name :</b> {API.Title}</h4>
+          <h3><b>Year : </b>{API.Year}</h3>
+          <p><b>Description :</b> {API.Plot}</p>
+          <p><b>Ganer :</b> {API.Genre}</p>
+          <p><b>Actors :</b> {API.Actors}</p>
+          <p><b>Runtime :</b> {API.Runtime} <GiSandsOfTime/></p>
+          <div>
+            <span className='pe-3'>
+              <b>Raiting :</b> <span className='border border-4 border-dark rounded-5 p-2'>{API.imdbRating}</span>
+            </span>
+            <span className='fs-4 me-3 text-warning'>
+                <Raiting API={API}/>
+            </span>
+          </div>
+          <button className='btn btn-warning mt-3' onClick={goBack}>Go back</button>
+        </div>
+      </div>}
     </div>
   )
 }

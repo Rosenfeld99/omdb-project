@@ -1,5 +1,58 @@
+:root{
+    --dark : rgb(0, 0, 0);
+    --light : white;
+}
+
+body.light{
+    --backgounrd-color: var(--light);
+    --text-color : var(--dark);
+    --border : var(--dark);
+}
+
+body.dark{
+    --backgounrd-color: var(--dark);
+    --text-color : var(--light);
+    --border : var(--light);
+}
+
+body{
+    background : var(--backgounrd-color);
+    color: var(--text-color);
+}
+
+.navigation{
+    background-color: var(--backgounrd-color);
+    color: var(--text-color);
+    border-bottom: 1.5px solid var(--border);
+}
+
+.navigation::placeholder{
+    color: var(--text-color);
+}
+
+.home{
+    background-color: var(--backgounrd-color);
+    color: var(--text-color);
+}
+
+.movie-detailes{
+    background-color: var(--backgounrd-color);
+    color: var(--text-color);
+    min-height: 500px;
+}
+
+.loading{
+    background-color: var(--backgounrd-color);
+    color: var(--text-color);
+}
+
+.footer{
+    border-top: 1.5px solid var(--border);
+    background-color: var(--backgounrd-color);
+    color: var(--text-color);
+}
+
 .strips img{
     object-fit: cover;
-    /* background-position: bottom; */
     height: 350px;
 }

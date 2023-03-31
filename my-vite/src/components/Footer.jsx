@@ -7,8 +7,8 @@ const Footer = () => {
     let year = today.getFullYear();
 
   return (
-    <div className='bg-dark text-white p-1 mt-4 text-center text-md-start'>
-        <p className='container mt-3'>eliyahu-rosenfeld©{year}</p>
+    <div className='footer p-1 text-center text-md-start'>
+        <p className='container pt-3'>eliyahu-rosenfeld©{year}</p>
     </div>
   )
 }

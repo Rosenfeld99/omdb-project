@@ -17,7 +17,7 @@ const Strips = ({API}) => {
             <div className="carousel-inner" role="listbox">
                 <div className="carousel-item active">
                     <img src="https://www.framerated.co.uk/frwpcontent/uploads/2017/04/fast8a.jpg" className="w-100 d-block" alt="First slide"/>
-                    <div className="carousel-caption d-none d-md-block">
+                    <div className="carousel-caption">
                         <Link to={'/info/tt6806448'}>
                             <button className='btn btn-warning text-white'>More info <BiInfoCircle/></button>
                         </Link>
@@ -25,7 +25,7 @@ const Strips = ({API}) => {
                 </div>
                 <div className="carousel-item">
                     <img src="https://cdn.vox-cdn.com/thumbor/Dc8bBshDmxtKUCeTFovjt_pz_bM=/0x0:1777x999/1200x800/filters:focal(708x235:992x519)/cdn.vox-cdn.com/uploads/chorus_image/image/63756879/parabellumcover.0.jpg" className="w-100 d-block" alt="Second slide"/>
-                    <div className="carousel-caption d-none d-md-block">
+                    <div className="carousel-caption">
                     <Link to={'/info/tt6146586'}>
                         <button className='btn btn-warning text-white'>More info <BiInfoCircle/></button>
                     </Link>
@@ -33,7 +33,7 @@ const Strips = ({API}) => {
                 </div>
                 <div className="carousel-item">
                     <img src="https://film-authority.com/wp-content/uploads/2021/12/16-9.jpg" className="w-100 d-block" alt="Third slide"/>
-                    <div className="carousel-caption d-none d-md-block">
+                    <div className="carousel-caption">
                     <Link to={'/info/tt1502397'}>
                         <button className='btn btn-warning text-white'>More info <BiInfoCircle/></button>
                     </Link>
