@@ -38,7 +38,7 @@ body{
 .movie-detailes{
     background-color: var(--backgounrd-color);
     color: var(--text-color);
-    min-height: 500px;
+    min-height: 650px;
 }
 
 .loading{
@@ -54,5 +54,5 @@ body{
 
 .strips img{
     object-fit: cover;
-    height: 350px;
+    height: 450px;
 }
