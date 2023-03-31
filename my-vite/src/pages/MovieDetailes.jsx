@@ -3,8 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import {GiSandsOfTime} from 'react-icons/gi'
 import Raiting from '../components/Raiting';
 import Loading from '../components/Loading';
-import {BiPlusCircle} from 'react-icons/bi'
 import {RiArrowGoBackFill} from 'react-icons/ri'
+// import AddToFavorite from '../components/AddToFavorite';
 
 const MovieDetailes = () => {
 
@@ -27,10 +27,8 @@ const MovieDetailes = () => {
     setIsLoading(false);
   }
   
-  const goBack = ()=>{
-    nav(-1);
-  }
-  
+  const goBack = ()=>{ nav(-1); }
+
   return (
     <div className='movie-detailes'>
           {isLoading && <Loading/>}
@@ -55,7 +53,7 @@ const MovieDetailes = () => {
             </span>
           </div>
           <button className='btn btn-warning mt-1' onClick={goBack}>Go back <RiArrowGoBackFill/></button>
-          <button className='btn btn-secondary mt-1 ms-2'>Add to list <BiPlusCircle/></button>
+          {/* <AddToFavorite paramsId={params['id']} /> */}
         </div>
       </div>}
     </div>
