@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react';
+import React, { useState , useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {GiSandsOfTime} from 'react-icons/gi'
 import Raiting from '../components/Raiting';
 import Loading from '../components/Loading';
+import {BiPlusCircle} from 'react-icons/bi'
+import {RiArrowGoBackFill} from 'react-icons/ri'
 
 const MovieDetailes = () => {
 
@@ -15,7 +16,7 @@ const MovieDetailes = () => {
   useEffect(()=>{
     getData()
   },[])
-
+  
   const getData = async () =>{
     setAPI(false)
     setIsLoading(true);
@@ -53,7 +54,8 @@ const MovieDetailes = () => {
                 <Raiting API={API}/>
             </span>
           </div>
-          <button className='btn btn-warning mt-3' onClick={goBack}>Go back</button>
+          <button className='btn btn-warning mt-1' onClick={goBack}>Go back <RiArrowGoBackFill/></button>
+          <button className='btn btn-secondary mt-1 ms-2'>Add to list <BiPlusCircle/></button>
         </div>
       </div>}
     </div>

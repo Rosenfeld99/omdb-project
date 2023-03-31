@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {MdManageAccounts} from 'react-icons/md'
 import Theme from './Theme';
 
@@ -32,7 +32,9 @@ const Navigation = () => {
             </button>
             <ul className="dropdown-menu">
                 <li><div className="dropdown-item" type="button"> <Theme/></div></li>
-                <li><button className="dropdown-item" type="button">My list</button></li>
+                <Link to={'/favorite'}>
+                  <li><button className="dropdown-item" type="button">My list</button></li>
+                </Link>
             </ul>
           </div>
         </div>
