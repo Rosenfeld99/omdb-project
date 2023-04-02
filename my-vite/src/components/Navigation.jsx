@@ -28,14 +28,15 @@ const Navigation = () => {
         <div className="right-nav">
           <div className="dropdown">
             <button className="d-flex justify-contect-center align-center p-2 fs-4 text-white bg-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <MdManageAccounts/>
+                {/* <MdManageAccounts/> */}
+                <Theme/>
             </button>
-            <ul className="dropdown-menu">
+            {/* <ul className="dropdown-menu">
                 <li><div className="dropdown-item" type="button"> <Theme/></div></li>
                 <Link to={'/favorite'}>
                   <li><button className="dropdown-item" type="button">My list</button></li>
                 </Link>
-            </ul>
+            </ul> */}
           </div>
         </div>
     </div>
