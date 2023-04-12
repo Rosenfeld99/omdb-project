@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {BiAdjust} from 'react-icons/bi'
 
 const Theme = () => {
@@ -8,6 +8,7 @@ const Theme = () => {
     const lightTheme = 'light';
     const darkTheme = 'dark';
     let theme;
+    const [switcherText,setSwitcherText] = useState(false)
 
     if (localStorage) {
         theme = localStorage.getItem("theme");
@@ -37,9 +38,12 @@ const Theme = () => {
   return (
     <div 
         className={theme === 'dark' ? clickedClass : ''}
-        onClick={(e)=> swichTheme(e)}
+        onClick={(e)=> {
+            swichTheme(e)
+            setSwitcherText(!switcherText)
+        }}
     >
-        <span className='me-2'> Theme</span>
+        <span className='me-2'>{!switcherText ? 'light' : 'dark'}</span>
         <BiAdjust/>
     </div>
   )
