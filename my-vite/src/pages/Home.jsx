@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import ListMovies from '../components/ListMovies'
 import Strips from '../components/Strips'
 import Loading from '../components/Loading'
+import { API_KEY } from '../../keys/key'
 
 const Home = () => {
 
@@ -18,7 +19,7 @@ const Home = () => {
   const getData = async (searchQ) =>{
     if (!searchQ)return;
     setIsLoading(true);
-      let url = `https://www.omdbapi.com/?s=${searchQ}&apikey=f3141dc2`;
+      let url = `https://www.omdbapi.com/?s=${searchQ}&apikey=${API_KEY}`;
       const resp = await fetch(url);
       const data = await resp.json();
       setAPI(data.Search);
