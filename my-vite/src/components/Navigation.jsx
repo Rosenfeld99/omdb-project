@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import {MdManageAccounts} from 'react-icons/md'
+import { useNavigate } from 'react-router-dom';
 import Theme from './Theme';
 
 const Navigation = () => {
@@ -28,14 +27,8 @@ const Navigation = () => {
         <div className="right-nav">
           <div className="dropdown">
             <button className="d-flex justify-contect-center align-center p-2 fs-4 text-white bg-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <MdManageAccounts/>
+                <Theme/>
             </button>
-            <ul className="dropdown-menu">
-                <li><div className="dropdown-item" type="button"> <Theme/></div></li>
-                <Link to={'/favorite'}>
-                  <li><button className="dropdown-item" type="button">My list</button></li>
-                </Link>
-            </ul>
           </div>
         </div>
     </div>
