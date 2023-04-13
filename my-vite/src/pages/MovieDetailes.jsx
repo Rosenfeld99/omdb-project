@@ -4,6 +4,7 @@ import {GiSandsOfTime} from 'react-icons/gi'
 import Raiting from '../components/Raiting';
 import Loading from '../components/Loading';
 import {RiArrowGoBackFill} from 'react-icons/ri'
+import { API_KEY } from '../../keys/key';
 // import AddToFavorite from '../components/AddToFavorite';
 
 const MovieDetailes = () => {
@@ -20,7 +21,7 @@ const MovieDetailes = () => {
   const getData = async () =>{
     setAPI(false)
     setIsLoading(true);
-    let url = `https://www.omdbapi.com/?i=${params['id']}&apikey=f3141dc2`
+    let url = `https://www.omdbapi.com/?i=${params['id']}&apikey=${API_KEY}`
     const resp = await fetch(url);
     const data = await resp.json();
     setAPI(data)
