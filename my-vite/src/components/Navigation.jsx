@@ -26,7 +26,7 @@ const Navigation = () => {
         </div>
         <div className="right-nav">
           <div className="dropdown">
-            <button className="d-flex justify-contect-center align-center p-2 fs-4 text-white bg-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button className="d-flex justify-contect-center align-center p-2 fs-4 text-white bg-dark ms-2 rounded" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <Theme/>
             </button>
           </div>

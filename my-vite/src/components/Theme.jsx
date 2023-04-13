@@ -43,8 +43,10 @@ const Theme = () => {
             setSwitcherText(!switcherText)
         }}
     >
-        <span className='me-2'>{!switcherText ? 'light' : 'dark'}</span>
-        <BiAdjust/>
+        <div className="d-flex align-items-center">
+            <span className='me-2 d-none d-sm-flex'>{!switcherText ? 'light' : 'dark'}</span>
+            <BiAdjust/>
+        </div>
     </div>
   )
 }
